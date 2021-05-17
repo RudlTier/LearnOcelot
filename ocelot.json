@@ -1,0 +1,26 @@
+{
+    "Routes": [
+        {
+        "DownstreamPathTemplate": "/request",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+            {
+                "Host": "mockbin.org",
+                "Port": 443
+            }
+        ],
+        "UpstreamPathTemplate": "/request",
+        "UpstreamHttpMethod": [ "Get" ],
+        "AuthenticationOptions": {
+            "AuthenticationProviderKey": "TestKey",
+            "AllowedScopes": []
+        },
+        "AddHeadersToRequest": {
+            "CustomerId": "Claims[sub] > value"
+        }
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:5001"
+    }
+}
